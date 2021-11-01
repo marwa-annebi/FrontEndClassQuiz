@@ -1,0 +1,38 @@
+.btn3{
+    margin-top: 30px;
+    width: 200px;
+    font-family: Harmattan;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    box-shadow: rgba(254, 214, 100, 0.867) 0px 0px 40px 5px;
+    padding: 0.75rem 1rem;
+    border-radius: 20px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    background: linear-gradient(-45deg, rgb(254, 214, 100), rgb(255, 200, 44)) 0% 0% / 600%;
+    animation: 16s linear 0s infinite normal none running anime;
+}
+.body {
+    margin-left: 365px !important; 
+    padding: 50px !important;
+    text-align:center;
+    align:center;
+}
+.grey-text{
+    color :#8AE3FB;
+    font-size: 25px;
+}
+.link{
+    text-align: center;
+color:#8AE3FB;
+font-size: 20px;
+width:500px !important;
+text-decoration: underline;
+font-weight:bolder;
+font-family: Harmattan;
+}

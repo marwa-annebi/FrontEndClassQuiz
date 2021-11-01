@@ -1,0 +1,27 @@
+.form-rounded{
+    border-radius: 1rem;
+    border:3px #8AE3FB solid !important;
+    color :#8AE3FB;
+    
+}
+.form-rounded-left{
+    border-radius: 1rem;
+    border-left:3px #8AE3FB solid !important;
+    border-top:3px #8AE3FB solid !important;
+    border-bottom:3px #8AE3FB solid !important;
+    border-left:0px;
+    color :#8AE3FB;
+    
+}
+.form-rounded-right{
+    border-radius: 1rem;
+    border-right:3px #8AE3FB solid !important;
+    border-top:3px #8AE3FB solid !important;
+    border-bottom:3px #8AE3FB solid !important;
+    border-right:0px;
+    color :#8AE3FB;
+    
+}
+.form-rounded::placeholder{
+    color:#8AE3FB
+}
