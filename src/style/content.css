@@ -1,4 +1,3 @@
-
 .info{
 
 margin-top:-200px;
@@ -154,36 +153,28 @@ font-family: Harmattan,Regular;
     border-radius: 25px !important;
 }
 
-.card-body{
-    background-color: white;
-}
+
 
 .types{
     display:flex;
     justify-content: space-evenly;
 }
-.card-container{
-    border-radius: 20px;
-    box-sizing: border-box;
-    border: 1px white solid !important;
-    padding-left:35px ;
-    padding-right:35px ;
-    width: 600px !important;
 
-}
 .card-container-name,.card-container-description{
     width:500px;
+    text-align: center;
 }
 .card-container-image{
-    max-width: 90px;
-    min-height: 90px;
+    position: absolute;
+    height: 90x;
+    width: 90px;
+    top: -70px;
+    left: calc(50% - 80px);
+    border-radius: 50%;
+    overflow: hidden;
+ 
 }
-.card-container{
-    padding-top:45px;
-    padding-bottom: 30px;
-   
-    
-}
+
 
 .shadow-effect {
     background: #fff;
@@ -191,19 +182,29 @@ font-family: Harmattan,Regular;
     border-radius: 4px;
     
   }
+  .Static{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: linear-gradient(rgb(255, 255, 255) 0%, rgb(217, 240, 249) 25%);
+  }
  
 
 .item {
 
- margin-top: 20px;
-  
+ margin-top: 80px;
+
 margin-right: 200px !important;
 margin-left: 10px !important;
     opacity: 0.2;
     transform: scale3d(0.8, 0.8, 1);
     transition: all 0.3s ease-in-out;
-width: 500px !important;
+width: 550px !important;
+
   }
+
   #customer-testimonoals .owl-item.active.center .item {
     opacity: 1;
     transform: scale3d(1.0, 1.0, 1);
@@ -224,4 +225,140 @@ width: 500px !important;
     color: gray;
  }
 
+ .slider {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image {
+    
+    height: 500px;
+    width: 900px;
+    opacity: 1;
+    display: block;
+    transform: translateX(0px) translateY(0px) rotateX(0deg) rotateZ(5deg) translateZ(0px);
+border:20px solid #000000;
+position: relative;
+border-radius: 15px;
+padding: auto;
+  }
+  .anim1{
+    position: absolute;
+    right: 5px;
+    top: 80px;
+    animation: 7s ease-in-out 0s infinite normal none running float-animation-left;
+    animation-duration: 4s;
+    animation-delay: 2s;
+  }
+  @keyframes float-animation-left{
+      0%{
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(100px);
+}
+100% {
+    transform: translateX(0px);
+}
+}
+.rocket{
+    animation: 1s ease-in-out 0s 1 normal none running launch-animation;
+    position: absolute;
+    left: -40px;
+    top: 300px;
+}
+.anim2{
+    position: absolute;
+    right: 100px;
+    top: 300px;
+    animation: 7s ease-in-out 0s infinite normal none running float-animation-right;
+}
+@keyframes float-animation-right{
+    0%{
+  transform: translateX(0px);
+}
+50% {
+  transform: translateX(-100px);
+}
+100% {
+  transform: translateX(0px);
+}
+}
+.anim3{
+    position: absolute;
+    right: -30px;
+    bottom: 30px;
+    animation: 7s ease-in-out 0s infinite normal none running float-animation-left;
+}
+.anim4{
+    position: absolute;
+    left: -40px;
+    top: 50px;
+    animation: 7s ease-in-out 0s infinite normal none running float-animation-right;
+}
+.anim5{
+    position: absolute;
+    left: 50px;
+    bottom: 100px;
+    animation: 7s ease-in-out 0s infinite normal none running float-animation-left;
+}
+.anim6{
+    position: absolute;
+    left: -100px;
+    bottom: -40px;
+    animation: 7s ease-in-out 0s infinite normal none running float-animation-left;
+}
 
+.inverted{
+    width: 100vw;
+     
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: rgb(214, 239, 250);
+}
+  .app-op{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: rgb(214, 239, 250);
+    
+  }
+  .right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    font-size: 3rem;
+    color:white;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  
+  .left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    font-size: 3rem;
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .slide {
+    opacity: 0;
+    transition-duration: 1s ease;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+  }

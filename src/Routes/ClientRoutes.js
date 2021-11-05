@@ -1,16 +1,18 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import { Route } from "react-router-dom";
 import { FormPage } from "../screens";
-import Inscription from './../screens/Auth/Inscription';
+import Inscription from "./../screens/Auth/Inscription";
+import Content from "./../components/Content";
+import Annonce from "../screens/Client/Annonce";
 
 function ClientRoutes() {
   return (
-    <Container>
-     
+    <>
+      <Route path="/" component={Content} exact />
+      <Route path="/Annonce" component={Annonce} exact />
       <Route path="/Inscription" component={Inscription} exact />
       <Route path="/login" component={FormPage} exact />
-    </Container>
+    </>
   );
 }
 

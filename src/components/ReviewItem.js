@@ -5,13 +5,13 @@ const ReviewItem = ({reviewDetail})=>{
     const {img,name,description}=reviewDetail
     console.log("reviewDetail"+reviewDetail)
     return(
-<div className="item" >
+<div className="item"  >
 <div className="shadow-effect">
-<div className="img-center"style={{display:'flex',justifyContent:'space-around'}}>
-    <img src={img} className="card-container-image" style={{  margin:'0 auto',borderRadius:100}}/>
+
+            <div className="card-container" >
+            <div className="card-container-image" >
+    <img src={img} style={{   height: "inherit",width: "inherit",display: "block"}} />
  </div>
-            <div className="card-container" style={{width:800}}>
-                
                 <div className="card-container-name text-type-7">
                     {name}
                 </div>

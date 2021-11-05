@@ -1,34 +1,51 @@
-import logo from "./logo.svg";
-import BackgroundSVG from "./img/imgbg.js";
-import "./App.css";
-import "./style/container.css";
-import "./style/content.css";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Content from "./components/Content";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import FormPage from './components/FormPage';
-import { AddUser } from "./screens";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { AdminRoutes, ClientRoutes, AuthRoutes } from "./Routes/index";
+import HeaderUser from "./components/Header/HeaderUser";
+import HeaderAdmin from "./components/Header/HeaderAdmin";
+import Header from "./components/Header/Header";
 function App() {
-/*   const svgString = encodeURIComponent(renderToStaticMarkup(<BackgroundSVG />));
-  console.log();
-  let images = (folder) => {
-    let arr = [];
-    for (let i = 1; i <= 24; i += 2) {
-      arr.push(`${folder}/_ (${i}).png`);
-    }
-    return arr;
-  }; */
+  const [isAdmin, setIsAdmin] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState();
+
+  const getUser = () => {
+    let admin = JSON.parse(localStorage.getItem("isAdmin"));
+    setIsAdmin(admin);
+    setIsLoggedIn(localStorage.getItem("token"));
+  };
+
+  useEffect(() => {
+    getUser();
+    console.log(isAdmin);
+  }, []);
   return (
     <Router>
-        <Switch>
-          <Route exact path="/">
-            <Content />
-          </Route>
-    <Route exact path="/AddUser">
-    <AddUser />
-    </Route>
-        </Switch>
-        </Router>
+      {isLoggedIn ? (
+        isAdmin == true ? (
+          <HeaderAdmin />
+        ) : (
+          <HeaderUser />
+        )
+      ) : (
+        <Header />
+      )}
+
+      {isLoggedIn ? (
+        isAdmin == true ? (
+          <Switch>
+            <AdminRoutes />
+          </Switch>
+        ) : (
+          <Switch>
+            <ClientRoutes />
+          </Switch>
+        )
+      ) : (
+        <AuthRoutes />
+      )}
+    </Router>
   );
 }
 

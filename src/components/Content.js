@@ -4,9 +4,8 @@ import "../style/container.css";
 import "../style/content.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/esm/Row";
-import Col from "react-bootstrap/esm/Col";
-import Navigation from "../components/navigation";
-import CarouselComponent from "../components/carousel";
+import Col from "react-bootstrap/esm/Col"
+import CarouselComponent from "./ImageSlider";
 import InfoCard from "../components/infoCard";
 import InfoCard2 from "../components/infoCard2";
 
@@ -17,18 +16,21 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Review from "./Review.js";
 import { Link } from 'react-router-dom';
-import Footer from './Footer';
+
+import ImageSlider from "./ImageSlider";
+import { SliderData } from './SliderData';
 function Content() {
 
  
   return (
     
     <div /* style={{background:`url("data:image/svg+xml,${svgString}")`}} */>
-      <Navigation />
+
       <div className="_background">
-        <CarouselComponent />
+      <ImageSlider slides={SliderData} />
       </div>
-      <span className="_background0">
+      <span className="_background0" >
+        <div id="app-features">
         <div
           className="info"
           style={{ display: "flex", justifyContent: "space-around",
@@ -101,13 +103,21 @@ function Content() {
             minister="minister.png"
           />
         </Row>
+       </div>
+  
         <br />
- <div style={{backgroundColor:"linear-gradient(rgb(255, 255, 255) 0%, rgb(217, 240, 249) 25%)"}}>        <div style={{ textAlign: "center" }}>
-          <div className="text-type-5">
+        
+
+   <div style={{ textAlign: "center" }}>
+   <div className="inverted">
+          <img src="inverted-clouds.png"></img></div>
+          <div id="app-content" className="content">
+       
+          <div className="text-type-5" >
             تتكوّن تطبيقة كلاس كويز من تنوّع كبير في المُحتوى و تمارين مُختلفة
             التي تشمُل كلّ ما يدرُسه طفلك في القسم
           </div>
-        </div>
+     
         <div>
           <img
             src="science.png"
@@ -147,6 +157,8 @@ function Content() {
           <InfoCard2 image="042-abacus.png" text="الأعداد و القسمة"></InfoCard2>
           <InfoCard2 image="001-knowledge.png" text="عقل الإنسان"></InfoCard2>
         </div>
+        </div>   </div>
+        <div id="app-op" className="app-op" >
         <div style={{ textAlign: "center" }}>
           <div className="text-type-5">
             <img src="2.png" /> أولياء و معلّمين و أطفال كانوا سُعداء باستعمالهم
@@ -158,31 +170,34 @@ function Content() {
           <span className="info-badge">معلم</span>
         </div>
         <div style={{display:"flex",justifyContent:"space-evenly",marginTop:"10px"}}>
-          
-                      <Review />
+          <div >
+                      <Review /></div>
         </div>
-        <div style={{ textAlign: "center" }} className="background">
-          <div className="text-type-5">
+        </div>
+     
+        <div style={{ textAlign: "center" ,backgroundColor:"rgb(214, 239, 250)",marginTop:-100}}>
+     
+          <div className="text-type-5" style={{padding:"100px"}}>
             هذا التطبيق موثوق به من طرف
           </div>
-          <div style= {{display:"flex",justifyContent:"space-evenly",marginTop:100}}>
+          <div style= {{display:"flex",justifyContent:"space-evenly",marginTop:50,paddingBottom:"100px"}}>
             <img src="institut-francais.png"></img>
             <img src="banque-zitouna.png"></img>
             <img src="orange_foundation.png"></img>
           </div>
         </div>
-        <div style={{ textAlign: "center"}} >
+        <div style={{ textAlign: "center",marginTop:"50px"}} id="app-statistics" className="Static">
           <div className="text-type-8">
           إبدأ رحلتك التعليمية الأن
 و إنضم لعائلة كلاس كويز
           </div>
           <div><button className="btn1" > إبدأ رحلتك</button></div>
           <div className="statistics"><img src="statistics.png" alt="Class Quiz statistics" /></div>
-        </div>
-        <div style={{ textAlign: "center"}} >
+   
+        <div style={{ textAlign: "center"}}  >
           <div className="text-type-9">
             <Col>
-        <Row><img src="feature-5.png" style={{width:"100px"}}/> </Row> 
+        <Row><img src="feature-5.png" style={{width:"100px"}} /> </Row> 
         <Row>
         اشترك الآن للحصول على كلّ ما هو جديد من نصائح و معلومات تُفيدك و تُفيد طفلك
         </Row></Col>
@@ -191,11 +206,29 @@ function Content() {
         <Link to="/inscription">
           <button className="btn2">إشترك</button>
           </Link></div>
-          </div>
+      
+          <div className="Footer" style={{
+            marginTop:"200px",
+            opacity: 1,
+            top: "9802px",
+left:" -446.34326171875px",
+        }}>
+            <span style={{fontFamily: "Harmattan",
+            marginLeft:"100px",
+    fontSize: "30px",
+    color: "rgb(134, 73, 135)",margin: "0 px 1rem"}}>All right reserved © Envast Studio 2021</span>
+ <span style={{fontFamily: "Harmattan",
+ marginLeft:"350px",
+    fontSize: "30px",
+    color: "rgb(134, 73, 135)"}}>الشركة المالكة</span>
+        <img src="envast.png" style={{marginLeft:"20px"}}></img>
+      
 </div>
-      </span>
-      <Footer/>
-    </div>
+      </div>     </div>
+       </span>
+
+
+</div>
   )
 }
 
